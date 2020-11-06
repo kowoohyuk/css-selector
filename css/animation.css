@@ -1,0 +1,22 @@
+@keyframes animation-empty {
+    0% {
+        background-color: #efefef;
+    }
+    50% {
+        background-color: #9caade;
+    }
+    100% {
+        background-color: #efefef;
+    }
+}
+@keyframes animation-shake {
+    0% {
+        filter: brightness(1);
+    }
+    50% {
+        filter: brightness(0.8);
+    }
+    100% {
+        filter: brightness(1);
+    }
+}
