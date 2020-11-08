@@ -146,23 +146,27 @@ nav .menu-box span:nth-child(3) {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
 }
+.desk-section {
+    text-align: center;
+}
 .desk-wrap {
     position: relative;
-    width: 80%;
     margin: 0 auto;
+    display: inline-block;
+    height: 300px;;
 }
 desk {
     box-sizing: border-box;
-    display: block;
+    display: flex;
     background-color: #ddd;
     transform: skew(-15deg, 0deg);
     border-radius: 0.5em;
-    min-height: 200px;
+    min-height: 150px;
     box-shadow: 5px 5px 5px #000;
     padding: 2em 1em;
 }
-desk * {
-    margin: 0 1em;
+desk > * {
+    margin: 0 2em;
 }
 desk-leg {
     display: block;
@@ -182,12 +186,12 @@ desk-leg:nth-of-type(1) {
 }
 desk-leg:nth-of-type(2) {
     left: -10px;
-    top: 190px;
+    top: 140px;
     opacity: 0.8;
 }
 desk-leg:nth-of-type(3) {
     right: 35px;
-    top: 190px;
+    top: 140px;
     opacity: 0.8;
 }
 .active {
@@ -195,24 +199,24 @@ desk-leg:nth-of-type(3) {
 }
 note {
     width: 70px;
-    background: yellow;
+    background: #333;
     display: inline-block;
     height: 80px;
-    max-width: 20%;
     box-shadow: 2px 2px 5px #666;
     position: relative;
 }
 note:before {
     display: block;
     position: absolute;
-    content: "note";
+    content: "";
     font-size: 1.4em;
     text-align: center;
     font-weight: 400;
     width: 80%;
     left: 5px;
+    top: 10px;
     background-color: #fff;
-    height: 20px;
+    height: 10px;
 }
 note:after {
     display: block;
@@ -223,11 +227,139 @@ note:after {
     font-weight: 400;
     width: 80%;
     left: 5px;
-    bottom: 10px;
+    bottom: 15px;
     background-color: #eee;
-    height: 40px; 
+    height: 30px; 
+}
+pen {
+    width: 12px;
+    background: #fff;
+    border: 2px solid #333;
+    display: inline-block;
+    transform: rotateZ(20deg);
+    height: 60px;
+    top: 10px;
+    position: relative;
+    z-index: 1;
+    box-shadow: 2px 2px 5px #666;
+    animation: animation-shake 1s linear infinite;
+}
+pen:before {
+    width: 12px;
+    background: #333;
+    border: 2px solid #333;
+    display: inline-block;
+    content: "";
+    height: 5px;
+    top: -11px;
+    left: -2px;
+    position: absolute;
+    z-index: 1;
+    border-radius: 3px 3px 0 0;
+}
+pen:after {
+    display: block;
+    position: absolute;
+    content: "";
+    width: 0;
+    bottom: -33px;
+    left: -2px;
+    border-top: 12px solid #333;
+    height: 20px;
+    background: transparent;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
 }
 
+/*
+eraser {
+    width: 70px;
+    background: gray;
+    display: inline-block;
+    height: 60px;
+    top: -20px;
+    max-width: 20%;
+    box-shadow: 2px 2px 5px #666;
+    position: relative;
+}
+eraser:before {
+    display: block;
+    position: absolute;
+    content: "eraser";
+    font-size: 1.4em;
+    text-align: center;
+    font-weight: 400;
+    width: 80%;
+    left: 10%;
+    background-color: #fff;
+    top: 10px;
+}
+eraser:after {
+    display: block;
+    position: absolute;
+    content: "";
+    width: calc(100% - 2px);
+    left: 1px;
+    bottom: -20px;
+    background-color: #eee;
+    height: 20px;
+    box-shadow: 2px 2px 5px #666;
+    border-radius: 0px 0px 10px 10px;
+}
+*/
+
+phone {
+    width: 50px;
+    background: #333;
+    display: inline-block;
+    height: 80px;
+    box-shadow: 2px 2px 5px #666;
+    border-radius: 5px;
+    position: relative;
+}
+phone:before {
+    position: absolute;
+    content: "";
+    width: 7px;
+    height: 7px;
+    background-color: #fff;
+    border-radius: 50%;
+    bottom: 3px;
+    left: calc(50% - 3.5px);
+}
+phone:after {
+    display: block;
+    position: absolute;
+    content: "";
+    width: 70%;
+    height: 70%;
+    left: 15%;
+    top: 12%;
+    background-color: #fff;
+}
+.html-viewer {
+    display: block;
+    position: relative;
+    text-align: left;
+    background: #eee;
+    border-radius: 5px;
+    padding: 1em;
+    font-size: 1.8em;
+}
+.html-viewer > div {
+    color: #999;
+}
+.html-viewer div * {
+    color: #000;
+    cursor: default;
+    opacity: 0.55;
+    transition: opacity 0.2s linear;
+    padding: 0 1em;
+}
+.html-viewer div *:hover {
+    opacity: 1;
+    font-weight: 600;
+}
 @media (min-width: 1200px) {
     body {
         padding: 0 10vw;
