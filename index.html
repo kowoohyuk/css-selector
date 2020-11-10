@@ -19,46 +19,117 @@
 <body>
     <header>
         <!-- 로고와 깃허브 링크 및 공유 영역 -->
-    </header>
-    <section>
-        <nav>
-            <!-- 현재 레벨, 완료 여부, 레벨 리스트가 포함된 영역 -->
-            <!-- 
-            <ul>
-                <li>
-                    <a>1번 문제</a>
-                </li>
-                <li>
-                    <a>2번 문제</a>
-                </li>
-            </ul>
-             -->
-        </nav>
+        <p>
+            Css Selector Game
+        </p>
         <div>
+            <div>
+                <a href="https://github.com/kowoohyuk/css-selector"><img src="./images/github.png" alt="github"></a>
+            </div>
+            <div>
+                <!-- 기능 완성 후 작업
+                    <h3>Share</h3>
+                    <a>fb</a>
+                    <a>twit</a>
+                    <a>kakao</a>
+                    <a>link</a>
+                -->
+            </div>
+        </div>
+    </header>
+    <nav>
+        <!-- 현재 레벨, 완료 여부, 레벨 리스트가 포함된 영역 -->
+        <h1>1. Element Selector</h1>
+        <div class="menu-box">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul>
+            <li>
+                <a>1. Element Selector</a>
+            </li>
+            <li>
+                <a>2. Class Selector</a>
+            </li>
+            <li>
+                <a>3. Id Selector</a>
+            </li>
+        </ul>
+    </nav>
+    <section class="question-section">
+        <div class="q-description">
             <!-- 문제 텍스트 영역  -->
             <h2>
                 <!-- 제목 예) element selector -->
             </h2>
             <p>
+                note를 선택해주세요.
                 <!-- 예) monitor를 선택해주세요. -->
             </p>
-            <p>도움말</p>
+            <p class="hint">도움말</p>
             <p>
                 <!-- 기본은 opacity 0, 도움말 hover 시 보여주기! -->
                 <!-- 예) a는 element <a>를 선택합니다. -->
+                * a는 &lt;a&gt; 태그를 선택합니다.
             </p>
         </div>
-        <div>
+        <div class="q-answer">
             <!-- 답변 영역 -->
-            <input type="text" placeholder="selector를 입력해주세요!"> 
+            <input type="text" class="empty" placeholder="selector를 입력해주세요!"> 
             {
             <br>
             <br>
             }
+
         </div>
     </section>
-    <section>
-        
+    <section class="desk-section">
+        <!-- memo, small, big 으로 구분, note 위에 배치하는 식으로 depth를 구현하면 됨 -->
+        <div class="desk-wrap">
+            <desk>
+                <!-- <desk-item> -->
+                    <!-- <memo></memo> -->
+                <!-- </desk-item> -->
+                <desk-item>
+                    <note class="active"></note>
+                </desk-item>
+                <!-- <desk-item> -->
+                    <!-- <eraser></eraser> -->
+                <!-- </desk-item> -->
+                <desk-item>
+                    <pen></pen>
+                </desk-item>
+                <desk-item>
+                    <phone></phone>
+                </desk-item>
+                <desk-item>
+                    <phone></phone>
+                </desk-item>
+            </desk>
+            <desk-leg></desk-leg>
+            <desk-leg></desk-leg>
+            <desk-leg></desk-leg>
+        </div>
+        <div class="html-viewer">
+            <!-- html로 어떤 태그인지 보여주는 역할 -->
+            <div class="html-desk-wrap">
+                &lt;desk&gt;
+                <div class="">
+                    &lt;note /&gt;
+                </div>
+                <div class="">
+                    &lt;pen /&gt;
+                </div>
+                <div class="">
+                    &lt;phone /&gt;
+                </div>
+                <div class="">
+                    &lt;phone /&gt;
+                </div>
+                &lt;/desk&gt;
+            </div>
+        </div>
     </section>
     <script src='./js/game.js'></script>
     <script src='./js/level.js'></script>
