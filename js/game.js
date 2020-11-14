@@ -45,16 +45,23 @@ const removeFocused = () => {
 
 const checkInput = () => {
     const target = document.querySelectorAll('.desk .active');
+    const selected = document.querySelectorAll('.desk .selected');
     let check = true;
     if(target) {
         for(let i = 0; i < target.length; i++) {
-            if(!target[i].classList.contains('selected') || target[i].classList.contains('active')) {
+            if(!target[i].classList.contains('selected')) {
                 check = false;
                 break;
             }
         }
     } else {
         check = false;
+    }
+    for(let i = 0; i < selected.length; i++) {
+        if(!selected[i].classList.contains('active')) {
+            check = false;
+            break;
+        }
     }
     return check;
 };
@@ -223,7 +230,7 @@ const eventSetting = () => {
 
 const clearSetting = () => {
     const cleared = JSON.parse(localStorage.getItem('cleared'));
-    if(Object.keys(cleared).length) {
+    if(cleared && Object.keys(cleared).length) {
         const list = document.querySelectorAll('#js-level-list > li');
         for(const level in cleared) {
             if(cleared[level]) {
