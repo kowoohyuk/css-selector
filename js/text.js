@@ -2,16 +2,45 @@ const text = {
     '1': {
         'lang': {
             'ko': {
-                'title': 'Element Selector',
-                'description': '<span class="target-tag">note</span>를 선택해주세요.',
-                'hint': '* a는 &lt;a&gt; 태그를 선택합니다.',
+                'title': 'Element Selector - 1',
+                'description': '<span class="target-tag">book</span>을 선택하세요.',
+                'hint': '<span class="target-tag">div</span>는 모든 <span class="target-tag">div</span>태그를 선택합니다.<br><span class="target-tag">a</span>는 모든 <span class="target-tag">a</span>태그를 선택합니다.',
             }
         },
         'desk': [
-            '<note class="active"></note>',
-            '<pen></pen>',
-            '<phone></phone>',
-            '<phone></phone>',
+            ['book', 'active'],
+            ['cup'],
+            ['eraser'],
         ],
-    }
+    },
+    '2': {
+        'lang': {
+            'ko': {
+                'title': 'Element Selector - 2',
+                'description': '모든 <span class="target-tag">eraser</span>을 선택하세요.',
+                'hint': '<span class="target-tag">div</span>는 모든 <span class="target-tag">div</span>태그를 선택합니다.<br><span class="target-tag">a</span>는 모든 <span class="target-tag">a</span>태그를 선택합니다.',
+            }
+        },
+        'desk': [
+            ['eraser', 'active'],
+            ['book'],
+            ['pen'],
+            ['eraser', 'active'],
+        ],
+    },
+    '3': {
+        'lang': {
+            'ko': {
+                'title': 'Class Selector - 1',
+                'description': '<span class="target-tag">class="target"</span>인 <span class="target-tag">cup</span>을 선택하세요.',
+                'hint': '<span class="target-tag">.abc</span>는 클래스가 <span class="target-tag">abc</span>인 모든 태그를 선택합니다.',
+            }
+        },
+        'desk': [
+            ['book'],
+            ['cup'],
+            ['eraser'],
+            ['cup', 'active', 'target'],
+        ],
+    },
 };
