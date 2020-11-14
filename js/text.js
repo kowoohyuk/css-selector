@@ -43,4 +43,20 @@ const text = {
             ['cup', 'active', 'target'],
         ],
     },
+    '4': {
+        'lang': {
+            'ko': {
+                'title': 'Class Selector - 2',
+                'description': '<span class="target-tag">class="luck"</span>인 <span class="target-tag">cup</span>, <span class="target-tag">pen</span>을 선택하세요.',
+                'hint': '<span class="target-tag">.abc</span>는 클래스가 <span class="target-tag">abc</span>인 모든 태그를 선택합니다.',
+            }
+        },
+        'desk': [
+            ['book'],
+            ['pen', 'active', 'luck'],
+            ['pen'],
+            ['eraser'],
+            ['cup', 'active', 'luck'],
+        ],
+    },
 };

@@ -186,6 +186,7 @@ const textSetting = level => {
             for(let i = 2; i < v.length; i++) {
                 classText += v[i] + ' ';
             }
+            classText = classText.substring(0, classText.length - 1);
             classText += '"';
         }
         htmlWrapText += `<div> &lt;${v[0]} ${classText}/&gt; </div>`;
@@ -284,6 +285,9 @@ const init = () => {
     }
     listSetting();
     gameSetting(now);
+    if(document.body.clientWidth > 991) {
+        menuBox.classList.add('active');
+    }
 }
 
 window.onload = () => {
