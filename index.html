@@ -39,7 +39,8 @@
     </header>
     <nav>
         <!-- 현재 레벨, 완료 여부, 레벨 리스트가 포함된 영역 -->
-        <h1>1. Element Selector</h1>
+        <h1 id="js-title" class=""></h1>
+        <p class="check"></p>
         <div class="menu-box">
             <span></span>
             <span></span>
@@ -60,79 +61,67 @@
     <section class="question-section">
         <div class="q-description">
             <!-- 문제 텍스트 영역  -->
-            <h2>
-                <!-- 제목 예) element selector -->
-            </h2>
-            <p>
-                note를 선택해주세요.
+            <p id="js-description">
                 <!-- 예) monitor를 선택해주세요. -->
             </p>
             <p class="hint">도움말</p>
-            <p>
+            <p id="js-hint">
                 <!-- 기본은 opacity 0, 도움말 hover 시 보여주기! -->
                 <!-- 예) a는 element <a>를 선택합니다. -->
-                * a는 &lt;a&gt; 태그를 선택합니다.
             </p>
         </div>
         <div class="q-answer">
             <!-- 답변 영역 -->
-            <input type="text" class="empty" placeholder="selector를 입력해주세요!"> 
+            <input id="js-answer" type="text" class="empty" placeholder="selector를 입력해주세요!"> 
+            <div id="js-submit" class="btn-submit">submit</div>
+            <br>
             {
             <br>
             <br>
             }
-
         </div>
     </section>
     <section class="desk-section">
         <!-- memo, small, big 으로 구분, note 위에 배치하는 식으로 depth를 구현하면 됨 -->
         <div class="desk-wrap">
-            <desk>
-                <!-- <desk-item> -->
-                    <!-- <memo></memo> -->
-                <!-- </desk-item> -->
-                <desk-item>
+            <div class="desk">
+                <div class="desk-item">
                     <note class="active"></note>
-                </desk-item>
-                <!-- <desk-item> -->
-                    <!-- <eraser></eraser> -->
-                <!-- </desk-item> -->
-                <desk-item>
+                </div>
+                <div class="desk-item">
                     <pen></pen>
-                </desk-item>
-                <desk-item>
+                </div>
+                <div class="desk-item">
                     <phone></phone>
-                </desk-item>
-                <desk-item>
+                </div>
+                <div class="desk-item">
                     <phone></phone>
-                </desk-item>
-            </desk>
-            <desk-leg></desk-leg>
-            <desk-leg></desk-leg>
-            <desk-leg></desk-leg>
+                </div>
+            </div>
+            <div class="desk-leg"></div>
+            <div class="desk-leg"></div>
         </div>
         <div class="html-viewer">
             <!-- html로 어떤 태그인지 보여주는 역할 -->
             <div class="html-desk-wrap">
                 &lt;desk&gt;
-                <div class="">
+                <div>
                     &lt;note /&gt;
                 </div>
-                <div class="">
+                <div>
                     &lt;pen /&gt;
                 </div>
-                <div class="">
+                <div>
                     &lt;phone /&gt;
                 </div>
-                <div class="">
+                <div>
                     &lt;phone /&gt;
                 </div>
                 &lt;/desk&gt;
             </div>
         </div>
     </section>
+    <script src='./js/text.js'></script>
     <script src='./js/game.js'></script>
-    <script src='./js/level.js'></script>
-    <script src='./js/docs.js'></script>
 </body>
 </html>
