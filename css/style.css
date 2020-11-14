@@ -32,7 +32,7 @@ header {
 }
 header > p {
     font-size: 2em;
-    color: #ddd;
+    color: #f0f0f0;
     display: inline-block;
 }
 header > div {
@@ -40,19 +40,141 @@ header > div {
 }
 header > div * {
     display: inline-block;
-    color: #ddd;
+    color: #f0f0f0;
 }
 article {
     position: relative;
     float: left;
+}
+.main-article {
+    width: 100%;
 }
 article:not(.main-article) {
     min-width: 300px;
     position: relative;
     padding: 2em;
     width: 42.5%;
-    float: left;
     min-height: 50vh;
+}
+aside {
+    float: right;
+    width: 15%;
+}
+aside .menu-box {
+    width: 40px;
+    line-height: 5px;
+    cursor: pointer;
+    opacity: 0.8;
+    float: right;
+    margin-right: 1em;
+    margin-bottom: 1em;
+    position: relative;
+    top: 30px;
+}
+aside .menu-box:hover {
+    opacity: 1;
+}
+aside .menu-box span {
+    border-bottom: 5px solid #ddd;
+    display: block;
+    margin: 7px 0;
+    border-radius: 3px;
+    transition: transform 0.15s linear;
+    position: relative;
+}
+aside .menu-box.active span:nth-child(1) {
+    opacity: 0;
+}
+aside .menu-box.active span:nth-child(2) {
+    transform: rotate(45deg);
+}
+aside .menu-box.active span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: -13px;
+}
+aside h3 {
+    display: inline-block;
+    font-size: 2em;
+    color: #fff;
+    font-weight: 600;
+    border: 3px solid #fff;
+    padding: 0.5em;
+    border-radius: 0.5em 0.5em 0 0;
+    border-bottom: 0;
+    position: relative;
+    top: 32px;
+    z-index: 1;
+}
+aside h3:after {
+    border-bottom: 3px solid #011133;
+    width: 100%;
+    left: 0;
+    bottom: -1px;
+    position: absolute;
+    content: "";
+}
+aside ul {
+    list-style: none;
+    padding: 0 1em;
+    margin-top: 3em;
+    max-height: 80vh;
+    overflow-y: auto;
+    border: 3px solid #eee;
+    border-right-color: transparent;
+    border-radius: 0 0 0 1em;
+}
+aside ul li {
+    font-size: 1.8em;
+    color: #eee;
+    margin: 0.8em 0;
+    position: relative;
+    opacity: 0.8;
+}
+aside ul li:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+aside ul li.cleared {
+    color: #00ff00;
+}
+aside ul li.cleared:before {
+    position: absolute;
+    width: 3px;
+    height: 20px;
+    transform: rotateZ(40deg);
+    background-color: #00ff00;
+    content: "";
+    display: inline-block;
+    border-radius: 5px;
+    bottom: 1px;
+    right: 5px;
+    margin-left: 3em;
+    opacity: 1;
+}
+aside ul li.cleared:after {
+    position: absolute;
+    width: 3px;
+    height: 12px;
+    transform: rotateZ(-50deg);
+    background-color: #00ff00;
+    content: "";
+    border-radius: 5px;
+    bottom: 1px;
+    right: 15px;
+}
+aside h3, aside ul {
+    transform: translateX(20vw);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.15s linear;
+}
+aside .menu-box.active + h3, aside .menu-box.active + h3 + ul {
+    transform: translateX(0);
+    visibility: visible;
+    opacity: 1;
+}
+.question-article {
+    float: left;
 }
 .question-head {
     position: relative;
@@ -182,6 +304,7 @@ article:not(.main-article) {
 .desk-article {
     margin-top: 6.3em;
     text-align: center;
+    float: right;
 }
 .desk-wrap {
     position: relative;
@@ -334,123 +457,6 @@ note:after {
     border-left: 12px solid transparent;
     border-right: 12px solid transparent;
 }
-aside {
-    float: right;
-    width: 15%;
-}
-aside .menu-box {
-    width: 40px;
-    line-height: 5px;
-    cursor: pointer;
-    opacity: 0.8;
-    float: right;
-    margin-right: 1em;
-    margin-bottom: 1em;
-    position: relative;
-    top: 30px;
-}
-aside .menu-box:hover {
-    opacity: 1;
-}
-aside .menu-box span {
-    border-bottom: 5px solid #ddd;
-    display: block;
-    margin: 7px 0;
-    border-radius: 3px;
-    transition: transform 0.15s linear;
-    position: relative;
-}
-aside .menu-box.active span:nth-child(1) {
-    opacity: 0;
-}
-aside .menu-box.active span:nth-child(2) {
-    transform: rotate(45deg);
-}
-aside .menu-box.active span:nth-child(3) {
-    transform: rotate(-45deg);
-    top: -13px;
-}
-aside h3 {
-    display: inline-block;
-    font-size: 2em;
-    color: #fff;
-    font-weight: 600;
-    border: 3px solid #fff;
-    padding: 0.5em;
-    border-radius: 0.5em 0.5em 0 0;
-    border-bottom: 0;
-    position: relative;
-    top: 32px;
-    z-index: 1;
-}
-aside h3:after {
-    border-bottom: 3px solid #011133;
-    width: 100%;
-    left: 0;
-    bottom: -1px;
-    position: absolute;
-    content: "";
-}
-aside ul {
-    list-style: none;
-    padding: 0 1em;
-    margin-top: 3em;
-    max-height: 80vh;
-    overflow-y: auto;
-    border: 3px solid #eee;
-    border-right-color: transparent;
-    border-radius: 0 0 0 1em;
-}
-aside ul li {
-    font-size: 1.8em;
-    color: #eee;
-    margin: 0.8em 0;
-    position: relative;
-    opacity: 0.8;
-}
-aside ul li:hover {
-    opacity: 1;
-    cursor: pointer;
-}
-aside ul li.cleared {
-    color: #00ff00;
-}
-aside ul li.cleared:before {
-    position: absolute;
-    width: 3px;
-    height: 20px;
-    transform: rotateZ(40deg);
-    background-color: #00ff00;
-    content: "";
-    display: inline-block;
-    border-radius: 5px;
-    bottom: 1px;
-    right: 5px;
-    margin-left: 3em;
-    opacity: 1;
-}
-aside ul li.cleared:after {
-    position: absolute;
-    width: 3px;
-    height: 12px;
-    transform: rotateZ(-50deg);
-    background-color: #00ff00;
-    content: "";
-    border-radius: 5px;
-    bottom: 1px;
-    right: 15px;
-}
-aside h3, aside ul {
-    transform: translateX(20vw);
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.15s linear;
-}
-aside .menu-box.active + h3, aside .menu-box.active + h3 + ul {
-    transform: translateX(0);
-    visibility: visible;
-    opacity: 1;
-}
 footer {
     float: left;
     width: 100%;
@@ -461,7 +467,7 @@ footer {
 }
 footer > p {
     color: #aaa;
-    font-size: 1.8em;
+    font-size: 1.6em;
 }
 footer > p a {
     text-decoration: none;
@@ -480,10 +486,122 @@ footer .icon-author * {
 }
 footer .icon-author h4 {
     color: #aaa;
-    font-size: 1.2em;
 }
-@media (min-width: 1200px) {
-    .main-article {
+@media (max-width: 1199px) {
+    body {
+        margin-top: 46px;
+    }
+    header {
+        position: fixed;
+        top: 0;
+        width: 100vw;
+        background-color: #00000a;
+        z-index: 1;
+    }
+    header > div {
+        display: none;
+    }
+    article:not(.main-article) {
         width: 100%;
+    }
+    aside {
+        position: fixed;
+        right: 0;
+        top: 0;
+        width: 50%;
+        z-index: 1;
+        opacity: 0.9;
+    }
+    aside .menu-box {
+        top: 5px;
+        width: 30px;
+        position: absolute;
+        right: 0;
+        z-index: 2;
+    }
+    aside .menu-box span {
+        border-bottom-width: 3px;
+    }
+    aside .menu-box.active span:nth-child(3) {
+        top: -11px;
+    }
+    aside ul, aside h3 {
+        background: #011133;
+        border-width: 2px;
+        border: 0;
+    }
+    aside h3 {
+        display: block;
+        top: 0;
+        border-radius: 0;
+    }
+    aside ul {
+        padding: 1em 2em;
+        margin-top: 0;
+    }
+    .desk-article {
+        margin-top: 0;
+    }
+    footer {
+        position: relative;
+        margin-top: 2vh;
+    }
+}
+@media (max-width: 991px) {
+    body {
+        font-size: 8px;
+        overflow-y: auto;
+    }
+    article:not(.main-article) {
+        min-height: auto;
+    }
+    header {
+        padding: 2.2em;
+    }
+    aside h3 {
+        padding: 1.1em;
+    }
+    aside ul {
+        padding: 0em 2em;
+    }
+    .desk-article {
+        margin-top: 60px;
+    }
+    .desk-wrap {
+        overflow-x: auto;
+        overflow-y: hidden;
+        margin-bottom: 10px;
+        height: 150px;
+    }
+    .desk {
+        transform: skew(0);
+        min-height: 105px;
+    }
+    .html-viewer {
+        display: none;
+    }
+    .question-head .check {
+        top: -2px;
+    }
+    .question-head .check:after {
+        left: -5px;
+    }
+}
+@media (max-width: 500px) {
+    html, body {
+        width: 500px;
+    }
+    .desk-wrap {
+        width: 90%;
+    }
+    .desk {
+        min-height: 100px;
+        justify-items: center;
+    }
+    .desk .desk-item {
+        position: relative;
+        min-width: auto;
+        width: 70px;
+        margin: 0;
     }
 }
