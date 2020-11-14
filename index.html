@@ -37,90 +37,60 @@
             </div>
         </div>
     </header>
-    <nav>
-        <!-- 현재 레벨, 완료 여부, 레벨 리스트가 포함된 영역 -->
-        <h1 id="js-title" class=""></h1>
-        <p class="check"></p>
-        <div class="menu-box">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <ul>
-            <li>
-                <a>1. Element Selector</a>
-            </li>
-            <li>
-                <a>2. Class Selector</a>
-            </li>
-            <li>
-                <a>3. Id Selector</a>
-            </li>
-        </ul>
-    </nav>
-    <section class="question-section">
-        <div class="q-description">
-            <!-- 문제 텍스트 영역  -->
-            <p id="js-description">
-                <!-- 예) monitor를 선택해주세요. -->
-            </p>
-            <p class="hint">도움말</p>
-            <p id="js-hint">
-                <!-- 기본은 opacity 0, 도움말 hover 시 보여주기! -->
-                <!-- 예) a는 element <a>를 선택합니다. -->
-            </p>
-        </div>
-        <div class="q-answer">
-            <!-- 답변 영역 -->
-            <input id="js-answer" type="text" class="empty" placeholder="selector를 입력해주세요!"> 
-            <div id="js-submit" class="btn-submit">submit</div>
-            <br>
-            {
-            <br>
-            <br>
-            }
-        </div>
-    </section>
-    <section class="desk-section">
-        <!-- memo, small, big 으로 구분, note 위에 배치하는 식으로 depth를 구현하면 됨 -->
-        <div class="desk-wrap">
-            <div class="desk">
-                <div class="desk-item">
-                    <note class="active"></note>
-                </div>
-                <div class="desk-item">
-                    <pen></pen>
-                </div>
-                <div class="desk-item">
-                    <phone></phone>
-                </div>
-                <div class="desk-item">
-                    <phone></phone>
-                </div>
+    <article class="main-article">
+        <article class="question-article">
+            <div class="question-head">
+                <h1 id="js-title" class=""></h1>
+                <p class="check"></p>
             </div>
-            <div class="desk-leg"></div>
-            <div class="desk-leg"></div>
-        </div>
-        <div class="html-viewer">
-            <!-- html로 어떤 태그인지 보여주는 역할 -->
-            <div class="html-desk-wrap">
-                &lt;desk&gt;
-                <div>
-                    &lt;note /&gt;
-                </div>
-                <div>
-                    &lt;pen /&gt;
-                </div>
-                <div>
-                    &lt;phone /&gt;
-                </div>
-                <div>
-                    &lt;phone /&gt;
-                </div>
-                &lt;/desk&gt;
+            <div class="q-description">
+                <p id="js-description"></p>
+                <p class="hint">도움말</p>
+                <p id="js-hint"></p>
             </div>
+            <div class="q-answer">
+                <input id="js-answer" type="text" class="empty" placeholder="selector를 입력해주세요!"> 
+                <div id="js-submit" class="btn-submit">submit</div>
+                <br>
+                {
+                <br>
+                <br>
+                }
+            </div>
+        </article>
+        <article class="desk-article">
+            <div class="desk-wrap">
+                <div id="js-desk" class="desk"></div>
+                <div class="desk-leg"></div>
+                <div class="desk-leg"></div>
+            </div>
+            <div class="html-viewer">
+                <div id="js-html-wrap"></div>
+            </div>
+        </article>
+        <aside>
+            <div id="js-menu-box" class="menu-box active">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <h3>Level List</h3>
+            <ul id="js-level-list">
+            </ul>
+        </aside>
+    </article>
+    <footer>
+        <p>Made by <a href="https://github.com/kowoohyuk" target="_blank">@kowoohyuk</a></p>
+        <div class="icon-author">
+            <h4>Icon author</h4>
+            <p>
+                eraser, book, cup : <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+            </p>
+            <p>
+                pen : <a href="https://www.flaticon.com/kr/free-icon/pen_2890843" title="surang">surang</a> from <a href="https://www.flaticon.com/kr/" title="Flaticon"> www.flaticon.com</a>
+            </p>
         </div>
-    </section>
+    </footer>
     <script src='./js/text.js'></script>
     <script src='./js/game.js'></script>
 </body>
