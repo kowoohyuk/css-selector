@@ -1,7 +1,7 @@
 # CSS Selector 게임
 ![CSS Selector Main](./images/main.png)  
 CSS Selector은 가칭이며, 차후 변경될 수 있습니다.  
-현재 [kowoohyuk.github.io/css-selector/](https://kowoohyuk.github.io/css-selector/)에서 3레벨까지 확인하실 수 있습니다.
+[kowoohyuk.github.io/css-selector/](https://kowoohyuk.github.io/css-selector/)에서 데모 버전을 체험해보세요!
 
 
 ## 어떤 프로젝트인가요?
