@@ -1,11 +1,11 @@
 const { log } = console;
 
 const addArrow = idx => {
-    const target = document.querySelectorAll('.desk .desk-item *')[idx];
+    const target = document.querySelectorAll('.desk > *')[idx];
     const arrow = document.createElement('div');
     arrow.classList.add('item-tooltip');
     arrow.style.top = '-60px';
-    arrow.style.left = `${target.parentNode.clientWidth / 2 - 12}px`;
+    arrow.style.left = `${target.offsetLeft - 12}px`;
     target.parentNode.appendChild(arrow);
 }
 
@@ -108,13 +108,11 @@ const submitFailed = () => {
 }
 
 const submitInput = () => {
-    const value = '.desk ' + document.querySelector('#js-answer').value;
+    const value = document.querySelector('#js-answer').value;
     try {
         const target = document.querySelectorAll(value);
-        if(target) {
-            for(let i = 0; i < target.length; i++) {
-                target[i].classList.add('selected');
-            }
+        for(let i = 0; i < target.length; i++) {
+            target[i].classList.add('selected');
         }
         const result = checkInput();
         if(result) {
@@ -178,20 +176,29 @@ const textSetting = level => {
 
     const desk = text[level]['desk'];
     const htmlWrap = document.querySelector('#js-html-wrap');
-    let htmlWrapText = '&lt;desk&gt;';
+    let htmlWrapText = '&lt;div class="desk"&gt;';
     desk.forEach(v => {
         let classText = '';
+        let idText = '';
         if(v.length > 2) {
-            classText += 'class="';
             for(let i = 2; i < v.length; i++) {
-                classText += v[i] + ' ';
+                if(v[i][0] === '.') {
+                    if(classText === '') {
+                        classText += 'class="';
+                    }
+                    classText += v[i].substring(1) + ' ';
+                } else if(v[i][0] === '#') {
+                    idText = `id="${v[i].substring(1)}"`;
+                }
             }
-            classText = classText.substring(0, classText.length - 1);
-            classText += '"';
+            if(classText.length > 0) {
+                classText = classText.substring(0, classText.length - 1);
+                classText += '"';
+            }
         }
-        htmlWrapText += `<div> &lt;${v[0]} ${classText}/&gt; </div>`;
+        htmlWrapText += `<div> &lt;${v[0]} ${idText} ${classText}/&gt; </div>`;
     });
-    htmlWrapText += '&lt;/desk&gt;';
+    htmlWrapText += '&lt;/div&gt;';
     htmlWrap.innerHTML = htmlWrapText;
 }
 
@@ -201,20 +208,28 @@ const deskSetting = level => {
     let jsDeskText = '';
     desk.forEach(v => {
         let classText = '';
+        let idText = '';
         if(v.length > 1) {
-            classText += 'class="';
-            for(let i = 1; i < v.length; i++) {
-                classText += v[i] + ' ';
+            classText += `class="${v[1]} `;
+            for(let i = 2; i < v.length; i++) {
+                if(v[i][0] === '.') {
+                    classText += v[i].substring(1) + ' ';
+                } else if(v[i][0] === '#') {
+                    idText = `id="${v[i].substring(1)}"`;
+                }
             }
-            classText += '"';
+            if(classText.length > 0) {
+                classText = classText.substring(0, classText.length - 1);
+                classText += '"';
+            }
         }
-        jsDeskText += `<div class="desk-item"> <${v[0]} ${classText}></${v[0]}> </div>`;
+        jsDeskText += `<${v[0]} ${idText} ${classText}></${v[0]}>`;
     });
     jsDesk.innerHTML = jsDeskText;
 }
 
 const eventSetting = () => {
-    const desk = document.querySelectorAll('.desk > .desk-item');
+    const desk = document.querySelectorAll('.desk > *');
     const htmlDesk = document.querySelectorAll('#js-html-wrap > div');
     const input = document.querySelector('#js-answer');
     for(let i = 0; i < desk.length; i++) {
