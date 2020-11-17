@@ -85,13 +85,13 @@ const saveStorage = result => {
 const levelClear = () => {
     saveStorage(true);
     let now = +(localStorage.getItem('now'));
+    const list = document.querySelector('#js-level-list');
+    list.children[now - 1].classList.add('cleared');
+    const target = document.querySelector('#js-title');
+    target.classList.add('cleared');
     if(text[now + 1]) {
-        const list = document.querySelector('#js-level-list');
-        list.children[now - 1].classList.add('cleared');
         now++;
         localStorage.setItem('now', now);
-        const target = document.querySelector('#js-title');
-        target.classList.add('cleared');
         gameSetting(now);
     } else {
         ending();
