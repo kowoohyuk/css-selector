@@ -133,4 +133,19 @@ const text = {
             ['eraser'],
         ],
     },
+    '10': {
+        'lang': {
+            'ko': {
+                'title': '* Selector',
+                'description': '모든 태그를 선택하세요.',
+                'hint': '<span class="target-tag">*</span>는 모든 태그를 선택합니다.',
+            }
+        },
+        'desk': [
+            ['book', 'active'],
+            ['cup', 'active'],
+            ['pen', 'active'],
+            ['eraser', 'active'],
+        ],
+    },
 };
